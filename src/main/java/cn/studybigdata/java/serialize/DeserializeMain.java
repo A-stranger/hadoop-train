@@ -1,4 +1,4 @@
-package cn.studybigdata.hadoop.java.serialize;
+package cn.studybigdata.java.serialize;
 
 import java.io.FileInputStream;
 import java.io.IOException;

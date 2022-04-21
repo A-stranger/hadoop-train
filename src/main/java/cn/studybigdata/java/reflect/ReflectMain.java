@@ -1,7 +1,5 @@
 package cn.studybigdata.java.reflect;
 
-import org.apache.hadoop.yarn.webapp.hamlet.Hamlet;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
