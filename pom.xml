@@ -35,7 +35,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>cn.studybigdata.hadoop.mapred.serialize.DeptMain</mainClass>
+                            <mainClass>cn.studybigdata.hadoop.mapred.combine.WordCountMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
