@@ -1,13 +1,13 @@
-package cn.studybigdata.hadoop.mapred.wordcount;
+package cn.studybigdata.hadoop.mapred.ecombine;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-import org.apache.hadoop.io.Text;
 import java.io.IOException;
 
 public class WordCountMain {
@@ -26,7 +26,9 @@ public class WordCountMain {
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
 
+        job.setCombinerClass(WordCountCombiner.class);
 
+        job.setNumReduceTasks(3);
         job.setReducerClass(WordCountReduce.class);
         //<word,3>
         job.setOutputKeyClass(Text.class);

@@ -1,4 +1,4 @@
-package cn.studybigdata.hadoop.mapred.combine;
+package cn.studybigdata.hadoop.mapred.awordcount;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -35,8 +35,7 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
         IntWritable one = new IntWritable(1);
 
         for (String word : wordArray) {
-            //没有使用combiner : mapper <a, <1,1,1>>  node0->node1
-            //使用了combiner :  mapper <a, <3>>    node0->node1
+            //Output <word, 1>
             context.write(new Text(word), one);
         }
     }

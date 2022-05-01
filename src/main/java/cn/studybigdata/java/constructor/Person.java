@@ -23,13 +23,4 @@ public class Person {
     }
 
 
-
-    public static void main(String[] args) {
-        Person nobody = new Person();
-        Person hh = new Person("hanhong");
-        Person ym = new Person("yaoming", "male");
-
-        System.out.println();
-
-    }
 }

@@ -1,4 +1,4 @@
-package cn.studybigdata.hadoop.mapred.serialize;
+package cn.studybigdata.hadoop.mapred.cserialize;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.NullWritable;

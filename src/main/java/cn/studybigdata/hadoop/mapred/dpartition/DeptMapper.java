@@ -1,4 +1,4 @@
-package cn.studybigdata.hadoop.mapred.partition;
+package cn.studybigdata.hadoop.mapred.dpartition;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;

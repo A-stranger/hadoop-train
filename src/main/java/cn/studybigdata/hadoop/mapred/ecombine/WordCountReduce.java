@@ -1,4 +1,4 @@
-package cn.studybigdata.hadoop.mapred.combine;
+package cn.studybigdata.hadoop.mapred.ecombine;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;

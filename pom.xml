@@ -24,6 +24,11 @@
             <artifactId>hbase-client</artifactId>
             <version>1.4.13</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-server</artifactId>
+            <version>1.4.13</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -35,7 +40,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>cn.studybigdata.hadoop.mapred.combine.WordCountMain</mainClass>
+                            <mainClass>cn.studybigdata.hadoop.mapred.ecombine.WordCountMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

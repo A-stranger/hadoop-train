@@ -1,17 +1,17 @@
-package cn.studybigdata.hadoop.mapred.combine;
+package cn.studybigdata.hadoop.mapred.cserialize;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import java.io.IOException;
 
-public class WordCountMain {
+public class DeptMain {
 
+    //hadoop jar xxx.jar arg0 arg1
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 
         Configuration configuration = new Configuration();
@@ -19,19 +19,17 @@ public class WordCountMain {
         Job job = Job.getInstance(configuration);
 
 
-        job.setJarByClass(WordCountMain.class);
+        job.setJarByClass(DeptMain.class);
 
-        job.setMapperClass(WordCountMapper.class);
-        //<word,1>
-        job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(IntWritable.class);
+        job.setMapperClass(DeptMapper.class);
 
-        job.setCombinerClass(WordCountCombiner.class);
+        job.setMapOutputKeyClass(IntWritable.class);
+        job.setMapOutputValueClass(Employee.class);
 
-        job.setNumReduceTasks(3);
-        job.setReducerClass(WordCountReduce.class);
+
+        job.setReducerClass(DeptReduce.class);
         //<word,3>
-        job.setOutputKeyClass(Text.class);
+        job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(IntWritable.class);
 
         //input path

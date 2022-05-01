@@ -1,4 +1,4 @@
-package cn.studybigdata.hadoop.mapred.deptsalary;
+package cn.studybigdata.hadoop.mapred.bdeptsalary;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;

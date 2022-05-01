@@ -15,7 +15,7 @@ public class Basics {
 
 
         Configuration hbaseConf = HBaseConfiguration.create();
-        hbaseConf.set("hbase.zookeeper.quorum","node0");
+        hbaseConf.set("hbase.zookeeper.quorum","node1");
         hbaseConf.set("hbase.zookeeper.property.clientPort","2181");
 
         //拿到connection对象
@@ -61,7 +61,7 @@ public class Basics {
             Admin admin = connection.getAdmin();
 
             // 表名
-            TableName tableTest = TableName.valueOf("student_test");
+            TableName tableTest = TableName.valueOf("student_a");
 
             // 查询所有表
 //            TableName[] tableNames = admin.listTableNames();

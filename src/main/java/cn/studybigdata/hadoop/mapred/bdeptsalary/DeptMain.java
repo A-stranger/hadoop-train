@@ -1,4 +1,4 @@
-package cn.studybigdata.hadoop.mapred.serialize;
+package cn.studybigdata.hadoop.mapred.bdeptsalary;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -24,7 +24,7 @@ public class DeptMain {
         job.setMapperClass(DeptMapper.class);
 
         job.setMapOutputKeyClass(IntWritable.class);
-        job.setMapOutputValueClass(Employee.class);
+        job.setMapOutputValueClass(IntWritable.class);
 
 
         job.setReducerClass(DeptReduce.class);

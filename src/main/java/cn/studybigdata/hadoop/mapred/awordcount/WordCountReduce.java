@@ -1,4 +1,4 @@
-package cn.studybigdata.hadoop.mapred.combine;
+package cn.studybigdata.hadoop.mapred.awordcount;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-public class WordCountCombiner extends Reducer<Text, IntWritable, Text, IntWritable> {
+public class WordCountReduce extends Reducer<Text, IntWritable, Text, IntWritable> {
     @Override
     protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
 
@@ -23,6 +23,7 @@ public class WordCountCombiner extends Reducer<Text, IntWritable, Text, IntWrita
             int i = value.get();
             count += i;
         }
+
 
         context.write(key, new IntWritable(count));
 
